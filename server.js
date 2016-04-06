@@ -22,9 +22,9 @@ var sharejs = require('share');
 
 // set up redis server
 var redisClient;
-console.log(process.env.REDISTOGO_URL);
-if (process.env.REDISTOGO_URL) {
-  var rtg   = require("url").parse(process.env.REDISTOGO_URL);
+console.log(process.env.REDISCLOUD_URL);
+if (process.env.REDISCLOUD_URL) {
+  var rtg   = require("url").parse(process.env.REDISCLOUD_URL);
   redisClient = require("redis").createClient(rtg.port, rtg.hostname);
   redisClient.auth(rtg.auth.split(":")[1]);
 } else {
